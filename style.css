@@ -9,3 +9,61 @@ License URI:       http://www.gnu.org/licenses/gpl-2.0.html
 
 Copyright          2011 Michael Fields.
 */
+
+.enable-wdd #page {
+	padding-top:70px;
+}
+
+.enable-wdd #dropdowns,
+.enable-wdd #dropdowns .widget h3 {
+	background:#ddd;
+}
+
+.enable-wdd #dropdowns {
+	font-family:arial,sans-serif;
+	position:absolute;
+	top:0;
+	left:0;
+	z-index:1;
+	margin:0;
+	padding:0;
+	width:100%;
+	border-bottom:1px solid #ccc;
+}
+.enable-wdd #dropdowns ul,
+.enable-wdd #dropdowns ol {
+	list-style-position:inside;
+	padding:0 0 0 .5em;
+	margin:0;
+}
+
+.enable-wdd #dropdowns .dropdown {
+	position:absolute;
+	z-index:0;
+	background:#fff;
+	width:200px;
+	padding:.5em 1em 1em;
+
+	-webkit-box-shadow: 0 0 .75em rgba( 0, 0, 0, 0.4 );
+	-moz-box-shadow:    0 0 .75em rgba( 0, 0, 0, 0.4 );
+	box-shadow:         0 0 .75em rgba( 0, 0, 0, 0.4 );
+}
+
+.enable-wdd #dropdowns .widget,
+.enable-wdd #dropdowns .widget h3 {
+	float:left;
+}
+.enable-wdd #dropdowns .widget h3 {
+	color:#555;
+	height:20px;
+	margin:0;
+	padding:10px; 10px;
+	cursor:pointer;
+}
+
+.enable-wdd #dropdowns .widget h3::selection {
+	background: transparent; /* Safari */
+}
+.enable-wdd #dropdowns .widget h3::-moz-selection {
+	background: transparent; /* Firefox */
+}

@@ -11,6 +11,7 @@
  *
  * Patches welcome!
  */
+
 function poc_widget_dropdowns_widgets_init() {
 	register_sidebar( array(
 		'name'          => 'Dropdowns',
@@ -22,5 +23,15 @@ function poc_widget_dropdowns_widgets_init() {
 		'after_title'   => '</h3><div class="dropdown">',
 	) );
 }
-
 add_action( 'widgets_init', 'poc_widget_dropdowns_widgets_init' );
+
+function poc_widget_dropdowns_scripts() {
+	wp_enqueue_script(
+		'dropdown-widgets',
+		get_stylesheet_directory_uri() . '/dropdowns.js',
+		array( 'jquery' ),
+		'0.1',
+		true
+	);
+}
+add_action( 'wp_print_scripts', 'poc_widget_dropdowns_scripts' );

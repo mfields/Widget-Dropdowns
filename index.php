@@ -16,9 +16,8 @@
 	</head>
 	<body>
 
-		<div id="dropdowns">
+		<div id="dropdown-widgets">
 			<?php dynamic_sidebar( 'dropdowns' ); ?>
-			<div style="clear:both;"></div>
 		</div>
 
 		<?php wp_footer(); ?>

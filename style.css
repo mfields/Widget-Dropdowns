@@ -10,16 +10,16 @@ License URI:       http://www.gnu.org/licenses/gpl-2.0.html
 Copyright          2011 Michael Fields.
 */
 
-.enable-wdd #page {
+#page {
 	padding-top:70px;
 }
 
-.enable-wdd #dropdowns,
-.enable-wdd #dropdowns .widget h3 {
+#dropdowns,
+#dropdowns .widget h3 {
 	background:#ddd;
 }
 
-.enable-wdd #dropdowns {
+#dropdowns {
 	font-family:arial,sans-serif;
 	position:absolute;
 	top:0;
@@ -30,14 +30,14 @@ Copyright          2011 Michael Fields.
 	width:100%;
 	border-bottom:1px solid #ccc;
 }
-.enable-wdd #dropdowns ul,
-.enable-wdd #dropdowns ol {
+#dropdowns ul,
+#dropdowns ol {
 	list-style-position:inside;
 	padding:0 0 0 .5em;
 	margin:0;
 }
 
-.enable-wdd #dropdowns .dropdown {
+#dropdowns .dropdown {
 	position:absolute;
 	z-index:0;
 	background:#fff;
@@ -49,11 +49,11 @@ Copyright          2011 Michael Fields.
 	box-shadow:         0 0 .75em rgba( 0, 0, 0, 0.4 );
 }
 
-.enable-wdd #dropdowns .widget,
-.enable-wdd #dropdowns .widget h3 {
+#dropdowns .trigger {
 	float:left;
+	text-decoration:none;
 }
-.enable-wdd #dropdowns .widget h3 {
+#dropdowns .trigger {
 	color:#555;
 	height:20px;
 	margin:0;
@@ -61,9 +61,9 @@ Copyright          2011 Michael Fields.
 	cursor:pointer;
 }
 
-.enable-wdd #dropdowns .widget h3::selection {
+#dropdowns .trigger::selection {
 	background: transparent; /* Safari */
 }
-.enable-wdd #dropdowns .widget h3::-moz-selection {
+#dropdowns .trigger::-moz-selection {
 	background: transparent; /* Firefox */
 }

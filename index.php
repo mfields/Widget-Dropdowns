@@ -62,12 +62,12 @@
 		</style>
 	</head>
 	<body>
-	
+
 	<div id="dropdowns">
 		<?php dynamic_sidebar( 'dropdowns' ); ?>
 		<div style="clear:both;"></div>
 	</div>
-	
+
 	<script>
 		jQuery( document ) .ready( function( $ ) {
 			var dropdowns = $( '#dropdowns' );			
@@ -148,7 +148,7 @@
 				/*
 				 * A box is being displayed.
 				 * Somewhere outside of the box was clicked.
-				 * We need to hide all ogf the boxen.
+				 * We need to hide all of the boxen.
 				 */
 				if ( 0 === link.closest( '.box' ).length ) {
 					hideAllBoxen();

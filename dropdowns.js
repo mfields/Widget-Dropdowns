@@ -66,7 +66,7 @@ jQuery( document ) .ready( function( $ ) {
 		/*
 		 * Stick the active box to the bottom of the container.
 		 */
-		active.box.css( { top : dropdowns.outerHeight() } );
+		active.box.css( { top : height } );
 
 		/*
 		 * The active box should not be cut-off when browser window shrinks.

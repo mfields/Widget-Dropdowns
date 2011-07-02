@@ -20,6 +20,8 @@ jQuery( document ) .ready( function( $ ) {
 	var dropdowns = $( document.createElement( 'div' ) );
 	dropdowns.attr( 'id', 'dropdowns' );
 
+	hideAllBoxen();
+
 	$( document ).bind( 'dropdownsLoaded', function() {
 		widgets.remove();
 		parent.prepend( dropdowns );
@@ -79,9 +81,6 @@ jQuery( document ) .ready( function( $ ) {
 		*/
 
 	} );
-
-	/* Reposition all boxen. */
-	hideAllBoxen();
 
 	$( document ).click( function( e ) {
 

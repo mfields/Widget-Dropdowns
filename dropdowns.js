@@ -17,15 +17,17 @@ jQuery( document ) .ready( function( $ ) {
 		left : '-1599980px'
 	};
 
-	var dropdowns = $( document.createElement( 'div' ) );
-	dropdowns.attr( 'id', 'dropdowns' );
+	var container = $( document.createElement( 'div' ) ).attr( 'id', 'menu' );
+	var dropdowns = $( document.createElement( 'div' ) ).attr( 'id', 'dropdowns' );
+	var triggers  = $( document.createElement( 'div' ) ).attr( 'id', 'triggers' );
 
 	hideAllBoxen();
 
 	$( document ).bind( 'dropdownsLoaded', function() {
 		widgets.remove();
-		parent.prepend( dropdowns );
-		height = dropdowns.outerHeight();
+		parent.prepend( container );
+		container.append( dropdowns ).append( triggers );
+		height = triggers.outerHeight();
 	} );
 
 	titles.each( function ( i, title ) {
@@ -42,7 +44,7 @@ jQuery( document ) .ready( function( $ ) {
 			.attr( 'href', '' )
 			.attr( 'data-for', boxId )
 			.addClass( 'trigger' )
-			.appendTo( dropdowns );
+			.appendTo( triggers );
 
 		title.parent()
 			.attr( 'id', boxId )
@@ -56,7 +58,7 @@ jQuery( document ) .ready( function( $ ) {
 	} );
 
 	$( window ).bind( 'resize', function ( e ) {
-		height = dropdowns.outerHeight();
+		height = triggers.outerHeight();
 
 		if ( null === active ) {
 			return;
@@ -124,7 +126,7 @@ jQuery( document ) .ready( function( $ ) {
 				hideAllBoxen();
 				return false;
 			}
-
+//console.log( height );
 			var css = {
 				top : height
 			};

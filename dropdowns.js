@@ -57,6 +57,8 @@ jQuery( document ) .ready( function( $ ) {
 	} );
 
 	$( window ).bind( 'resize', function ( e ) {
+		height = dropdowns.outerHeight();
+
 		if ( null === active ) {
 			return;
 		}
@@ -65,7 +67,6 @@ jQuery( document ) .ready( function( $ ) {
 		 * Stick the active box to the bottom of the container.
 		 */
 		active.box.css( { top : dropdowns.outerHeight() } );
-		height = dropdowns.outerHeight();
 
 		/*
 		 * The active box should not be cut-off when browser window shrinks.

@@ -77,15 +77,17 @@ jQuery( document ) .ready( function( $ ) {
 		var rightEdge = boxPos.left + active.box.outerWidth();
 
 		if ( rightEdge > parent.innerWidth() ) {
-			active.box.css( { left : ( parent.innerWidth() - active.box.outerWidth() ) } );
+			active.box.css( {
+				left  : 'auto',
+				right : 0
+			} );
 		}
-
-		/*
-		if ( Math.floor( triggerPos.left ) !== boxPos.left ) {
-			active.box.css( { left : Math.floor( triggerPos.left ) + 'px' } );
+		else if ( Math.floor( triggerPos.left ) < boxPos.left ) {
+			active.box.css( {
+				left  : Math.floor( triggerPos.left ),
+				right : 'auto'
+			} );
 		}
-		*/
-
 	} );
 
 	$( document ).click( function( e ) {

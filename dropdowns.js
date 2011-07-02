@@ -11,6 +11,7 @@ jQuery( document ) .ready( function( $ ) {
 	var titles  = widgets.find( config.triggers );
 	var boxen   = widgets.find( config.dropdowns );
 	var active  = null;
+	var height  = 0;
 	var origin  = {
 		top  : '-1599980px',
 		left : '-1599980px'
@@ -22,6 +23,12 @@ jQuery( document ) .ready( function( $ ) {
 	$( document ).bind( 'dropdownsLoaded', function() {
 		widgets.remove();
 		parent.prepend( dropdowns );
+		/*
+		 * Height of the container.
+		 * This needs to be calculated after the container
+		 * is repositioned.
+		 */
+		height = dropdowns.outerHeight();
 	} );
 
 	var triggers = [];
@@ -48,13 +55,6 @@ jQuery( document ) .ready( function( $ ) {
 			$( document ).trigger( 'dropdownsLoaded' );
 		}
 	} );
-
-	/*
-	 * Height of the container.
-	 * This needs to be calculated after the container
-	 * is repositioned.
-	 */
-	var height = dropdowns.outerHeight();
 
 	$( window ).bind( 'resize', function ( e ) {
 		if ( null === active ) {

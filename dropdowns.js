@@ -85,6 +85,14 @@ jQuery( document ) .ready( function( $ ) {
 
 	$( document ).click( function( e ) {
 
+		/*
+		 * Primary mouse button pressed.
+		 * @todo See how this works with touch screen devices.
+		 */
+		if ( 1 != e.which ) {
+			return;
+		}
+
 		var link = $( e.target );
 
 		if ( link.hasClass( 'trigger' ) ) {

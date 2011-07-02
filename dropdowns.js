@@ -76,7 +76,7 @@ jQuery( document ) .ready( function( $ ) {
 		var rightEdge = boxPos.left + active.box.outerWidth();
 
 		if ( rightEdge > parent.innerWidth() ) {
-			active.box.css( { left : ( parent.innerWidth() - active.box.outerWidth() ) + 'px' } );
+			active.box.css( { left : ( parent.innerWidth() - active.box.outerWidth() ) } );
 		}
 
 		/*
@@ -130,16 +130,16 @@ jQuery( document ) .ready( function( $ ) {
 			}
 
 			var css = {
-				top : height + 'px'
+				top : height
 			};
 
 			box.rightEdge = Math.ceil( box.outerWidth() + linkPosition.left );
 
 			if ( box.rightEdge > dropdowns.innerWidth() ) {
-				css.left = Math.ceil( dropdowns.outerWidth() - box.outerWidth() ) + 'px';
+				css.left = Math.ceil( dropdowns.outerWidth() - box.outerWidth() );
 			}
 			else {
-				css.left = Math.ceil( parseInt( linkPosition.left ) ) + 'px';
+				css.left = Math.ceil( parseInt( linkPosition.left ) );
 			}
 
 			/*

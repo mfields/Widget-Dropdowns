@@ -35,13 +35,17 @@ jQuery( document ) .ready( function( $ ) {
 			return;
 		}
 
+		var boxId = 'dropdown-' + i;
+
 		$( document.createElement( 'a' ) )
 			.text( title.text() )
 			.attr( 'href', '' )
+			.attr( 'data-for', boxId )
 			.addClass( 'trigger' )
 			.appendTo( dropdowns );
 
 		title.parent()
+			.attr( 'id', boxId )
 			.appendTo( dropdowns )
 			.find( config.triggers )
 			.remove();
@@ -95,7 +99,7 @@ jQuery( document ) .ready( function( $ ) {
 		var link = $( e.target );
 
 		if ( link.hasClass( 'trigger' ) ) {
-			var box = link.next();
+			var box = $( '#' + link.attr( 'data-for' ) );
 			var boxPosition = {
 				top  : box.css( 'top' ),
 				left : box.css( 'left' )

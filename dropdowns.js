@@ -20,7 +20,8 @@ jQuery( document ) .ready( function( $ ) {
 	dropdowns.attr( 'id', 'dropdowns' );
 
 	$( document ).bind( 'dropdownsLoaded', function() {
-		console.log( 'loaded' );
+		widgets.remove();
+		parent.prepend( dropdowns );
 	} );
 
 	var triggers = [];
@@ -47,10 +48,6 @@ jQuery( document ) .ready( function( $ ) {
 			$( document ).trigger( 'dropdownsLoaded' );
 		}
 	} );
-
-	widgets.remove();
-
-	parent.prepend( dropdowns );
 
 	/*
 	 * Height of the container.

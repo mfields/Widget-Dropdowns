@@ -10,62 +10,57 @@ License URI:       http://www.gnu.org/licenses/gpl-2.0.html
 Copyright          2011 Michael Fields.
 */
 
-#page {
-	padding-top:70px;
-}
-
-#dropdowns,
-#dropdowns .widget h3 {
-	background:#ddd;
-}
-
-#dropdowns {
+#menu {
 	font-family:arial,sans-serif;
 	position:relative;
 	z-index:1;
-	margin:0;
+	margin:0 0 1em;
 	padding:0;
 	width:100%;
-	border-bottom:1px solid #ccc;
 	float:left;
 }
-#dropdowns ul,
-#dropdowns ol {
+#menu ul,
+#menu ol {
 	list-style-position:inside;
 	padding:0 0 0 .5em;
 	margin:0;
 }
-
-#dropdowns .dropdown {
+#menu .dropdown {
 	position:absolute;
-	z-index:0;
 	background:#fff;
 	width:200px;
 	padding:.5em 1em 1em;
 }
-
-#dropdowns .trigger {
+#menu .trigger {
 	float:left;
 	text-decoration:none;
-}
-#dropdowns .trigger {
 	color:#555;
 	height:20px;
 	margin:0;
 	padding:10px; 10px;
 	cursor:pointer;
 }
-
-#dropdowns .trigger::selection {
+#menu .trigger::selection {
 	background: transparent; /* Safari */
 }
-#dropdowns .trigger::-moz-selection {
+#menu .trigger::-moz-selection {
 	background: transparent; /* Firefox */
 }
-
-#dropdowns,
-#dropdowns .dropdown {
+#triggers,
+#menu .dropdown {
 	-webkit-box-shadow: 0 0 .75em rgba( 0, 0, 0, 0.4 );
-	-moz-box-shadow:    0 0 .75em rgba( 0, 0, 0, 0.4 );
-	box-shadow:         0 0 .75em rgba( 0, 0, 0, 0.4 );
+	   -moz-box-shadow: 0 0 .75em rgba( 0, 0, 0, 0.4 );
+	        box-shadow: 0 0 .75em rgba( 0, 0, 0, 0.4 );
+}
+#triggers {
+	position:relative;
+	z-index:2;
+	background:#bbb;
+	float:left;
+	width:100%;
+	border-bottom:1px solid #999;
+}
+#dropdowns {
+	z-index:1;
+	clear:both;
 }

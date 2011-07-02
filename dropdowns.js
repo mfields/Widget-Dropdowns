@@ -1,8 +1,15 @@
 jQuery( document ) .ready( function( $ ) {
-	var widgets = $( '#dropdown-widgets' );
+
+	var config = {
+		container : '#dropdown-widgets',
+		dropdowns : '.dropdown',
+		triggers  : '.widget-title'
+	};
+
+	var widgets = $( config.container );
 	var parent  = widgets.parent();
-	var titles  = widgets.find( '.widget-title' );
-	var boxen   = widgets.find( '.dropdown' );
+	var titles  = widgets.find( config.triggers );
+	var boxen   = widgets.find( config.dropdowns );
 	var active  = null;
 	var origin  = {
 		top  : '-1599980px',
@@ -162,7 +169,7 @@ jQuery( document ) .ready( function( $ ) {
 		 * Somewhere outside of the box was clicked.
 		 * We need to hide all of the boxen.
 		 */
-		if ( 0 === link.closest( '.box' ).length ) {
+		if ( 0 === link.closest( config.dropdowns ).length ) {
 			hideAllBoxen();
 			return;
 		}

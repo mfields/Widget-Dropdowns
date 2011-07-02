@@ -21,14 +21,13 @@ Copyright          2011 Michael Fields.
 
 #dropdowns {
 	font-family:arial,sans-serif;
-	position:absolute;
-	top:0;
-	left:0;
+	position:relative;
 	z-index:1;
 	margin:0;
 	padding:0;
 	width:100%;
 	border-bottom:1px solid #ccc;
+	float:left;
 }
 #dropdowns ul,
 #dropdowns ol {
@@ -43,10 +42,6 @@ Copyright          2011 Michael Fields.
 	background:#fff;
 	width:200px;
 	padding:.5em 1em 1em;
-
-	-webkit-box-shadow: 0 0 .75em rgba( 0, 0, 0, 0.4 );
-	-moz-box-shadow:    0 0 .75em rgba( 0, 0, 0, 0.4 );
-	box-shadow:         0 0 .75em rgba( 0, 0, 0, 0.4 );
 }
 
 #dropdowns .trigger {
@@ -66,4 +61,11 @@ Copyright          2011 Michael Fields.
 }
 #dropdowns .trigger::-moz-selection {
 	background: transparent; /* Firefox */
+}
+
+#dropdowns,
+#dropdowns .dropdown {
+	-webkit-box-shadow: 0 0 .75em rgba( 0, 0, 0, 0.4 );
+	-moz-box-shadow:    0 0 .75em rgba( 0, 0, 0, 0.4 );
+	box-shadow:         0 0 .75em rgba( 0, 0, 0, 0.4 );
 }

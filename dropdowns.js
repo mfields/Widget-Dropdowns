@@ -41,7 +41,7 @@ jQuery( document ) .ready( function( $ ) {
 
 	$( 'body' ).prepend( dropdowns );
 
-	parent.css( { position : 'relative' } );
+	//parent.css( { position : 'relative' } );
 
 	/*
 	 * Height of the container.

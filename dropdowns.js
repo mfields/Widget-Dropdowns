@@ -26,16 +26,20 @@ jQuery( document ) .ready( function( $ ) {
 	var triggers = [];
 	titles.each( function ( i, e ) {
 		var title = $( e );
+		if ( '' === title.text().trim() ) {
+			return;
+		}
+
 		var trigger = $( document.createElement( 'a' ) );
-		trigger.text( $( title ).text() );
+		trigger.text( title.text() );
 		trigger.attr( 'href', '' );
 		trigger.addClass( 'trigger' );
 		trigger.appendTo( dropdowns );
 
 		triggers.push( trigger );
 
-		var widget = $( title ).parent();
-		$( title ).remove();
+		var widget = title.parent();
+		title.remove();
 
 		widget.appendTo( dropdowns );
 
@@ -46,9 +50,7 @@ jQuery( document ) .ready( function( $ ) {
 
 	widgets.remove();
 
-	$( 'body' ).prepend( dropdowns );
-
-	//parent.css( { position : 'relative' } );
+	parent.prepend( dropdowns );
 
 	/*
 	 * Height of the container.

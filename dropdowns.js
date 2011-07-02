@@ -31,9 +31,6 @@ jQuery( document ) .ready( function( $ ) {
 		$( title ).remove();
 
 		widget.appendTo( dropdowns );
-		widget.find( 'a' ).each( function( i2, e2 ) {
-			$( e2 ).attr( 'tabindex', -1 );
-		} );
 
 		if ( i + 1 === titles.length ) {
 			$( document ).trigger( 'dropdownsLoaded' );
@@ -136,15 +133,6 @@ jQuery( document ) .ready( function( $ ) {
 			 * the dropdowns div, left-aligned with the link.
 			 */
 			box.css( css );
-
-			var boxLinks = box.find( 'a' );
-			boxLinks.each( function( i, e ) {
-				$( e ).attr( 'tabindex', 1 );
-			} );
-
-			if ( undefined !== box.find( 'a' )[0] ) {
-				box.find( 'a' )[0].focus();
-			}
 
 			active = {};
 			active.box = box;

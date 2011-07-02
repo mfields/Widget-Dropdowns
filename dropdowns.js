@@ -23,33 +23,26 @@ jQuery( document ) .ready( function( $ ) {
 	$( document ).bind( 'dropdownsLoaded', function() {
 		widgets.remove();
 		parent.prepend( dropdowns );
-		/*
-		 * Height of the container.
-		 * This needs to be calculated after the container
-		 * is repositioned.
-		 */
 		height = dropdowns.outerHeight();
 	} );
 
-	var triggers = [];
-	titles.each( function ( i, e ) {
-		var title = $( e );
+	titles.each( function ( i, title ) {
+		var title = $( title );
+
 		if ( '' === title.text().trim() ) {
 			return;
 		}
 
-		var trigger = $( document.createElement( 'a' ) );
-		trigger.text( title.text() );
-		trigger.attr( 'href', '' );
-		trigger.addClass( 'trigger' );
-		trigger.appendTo( dropdowns );
+		$( document.createElement( 'a' ) )
+			.text( title.text() )
+			.attr( 'href', '' )
+			.addClass( 'trigger' )
+			.appendTo( dropdowns );
 
-		triggers.push( trigger );
-
-		var widget = title.parent();
-		title.remove();
-
-		widget.appendTo( dropdowns );
+		title.parent()
+			.appendTo( dropdowns )
+			.find( config.triggers )
+			.remove();
 
 		if ( i + 1 === titles.length ) {
 			$( document ).trigger( 'dropdownsLoaded' );

@@ -11,56 +11,82 @@ Copyright          2011 Michael Fields.
 */
 
 #menu {
-	font-family:arial,sans-serif;
+	font-family: Helvetica, Arial, sans-serif;
+	font-weight:normal;
 	position:relative;
 	z-index:1;
 	margin:0 0 1em;
 	padding:0;
 	width:100%;
 	float:left;
+	border:1px solid #222;
+	border-radius:5px;
 }
-#menu ul,
-#menu ol {
+
+#dropdowns ul,
+#dropdowns ol {
 	list-style-position:inside;
 	padding:0 0 0 .5em;
 	margin:0;
 }
-#menu .dropdown {
-	position:absolute;
-	background:#fff;
-	width:200px;
-	padding:.5em 1em 1em;
-}
-#menu .trigger {
-	float:left;
-	text-decoration:none;
-	color:#555;
-	height:20px;
-	margin:0;
-	padding:10px; 10px;
-	cursor:pointer;
-}
-#menu .trigger::selection {
-	background: transparent; /* Safari */
-}
-#menu .trigger::-moz-selection {
-	background: transparent; /* Firefox */
-}
-#triggers,
-#menu .dropdown {
-	-webkit-box-shadow: 0 0 .75em rgba( 0, 0, 0, 0.4 );
-	   -moz-box-shadow: 0 0 .75em rgba( 0, 0, 0, 0.4 );
-	        box-shadow: 0 0 .75em rgba( 0, 0, 0, 0.4 );
-}
+
 #triggers {
 	position:relative;
 	z-index:2;
-	background:#bbb;
 	float:left;
 	width:100%;
-	border-bottom:1px solid #999;
+	margin:0;
+	padding:8px 0 0;
+	border-top-color:#474747;
+	border-top-style:solid;
+	border-width:1px;
+	border-radius:5px;
 }
+
+#triggers li {
+	float:left;
+	margin:0 0 8px 8px;
+	padding:0;
+	list-style-type:none;
+	border-radius:5px;
+	border: 1px solid #202020;
+}
+
+#triggers a {
+	float:left;
+	padding:5px 7px 3px;
+	color:#bbb;
+	font-size:14px;
+	line-height:1;
+	text-decoration:none;
+	border-top: 1px solid #444;
+	border-bottom: 1px solid #303030;
+	border-radius:5px;
+}
+
 #dropdowns {
+	position:relative;
 	z-index:1;
 	clear:both;
+}
+
+#dropdowns .widget {
+	position:absolute;
+	z-index:1;
+	background:#555;
+	width:200px;
+	padding:.5em 1em 1em;
+	border:1px solid #333;
+}
+
+#menu,
+#triggers li {
+	background: #373737;
+	background: -moz-linear-gradient(top, #373737 1%, #272727 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(1%,#373737), color-stop(100%,#272727));
+	background: -webkit-linear-gradient(top, #373737 1%,#272727 100%);
+	background: -o-linear-gradient(top, #373737 1%,#272727 100%);
+	background: -ms-linear-gradient(top, #373737 1%,#272727 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#373737', endColorstr='#272727',GradientType=0 );
+	background: linear-gradient(top, #373737 1%,#272727 100%);
 }

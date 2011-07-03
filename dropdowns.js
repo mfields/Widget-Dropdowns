@@ -83,7 +83,7 @@ jQuery( document ) .ready( function( $ ) {
 				right : 0
 			} );
 		}
-		else if ( Math.floor( triggerPos.left ) < boxPos.left ) {
+		else if ( Math.floor( triggerPos.left ) < boxPos.left || ( 0 == boxPos.left && 0 != triggerPos.left ) ) {
 			active.box.css( {
 				left  : Math.floor( triggerPos.left ),
 				right : 'auto'

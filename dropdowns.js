@@ -39,12 +39,13 @@ jQuery( document ) .ready( function( $ ) {
 
 		var boxId = 'dropdown-' + i;
 
-		$( document.createElement( 'a' ) )
+		var link = $( document.createElement( 'a' ) )
 			.text( title.text() )
 			.attr( 'href', '' )
 			.attr( 'data-for', boxId )
-			.addClass( 'trigger' )
-			.appendTo( triggers );
+			.addClass( 'trigger' );
+
+		$( document.createElement( 'li' ) ).html( link ).appendTo( triggers );
 
 		title.parent()
 			.attr( 'id', boxId )

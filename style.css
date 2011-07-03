@@ -72,6 +72,10 @@ Copyright          2011 Michael Fields.
 	   -moz-box-shadow: 0 0 .5em rgba( 255, 255, 255, 0.3 );
 	        box-shadow: 0 0 .5em rgba( 255, 255, 255, 0.3 );
 }
+#triggers a.active,
+#triggers a:active {
+	background-color:red;
+}
 #dropdowns {
 	position:relative;
 	z-index:1;
@@ -98,4 +102,3 @@ Copyright          2011 Michael Fields.
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#555', endColorstr='#333', GradientType=0 );
 	background: linear-gradient( top, #555 1%, #333 100% );
 }
-

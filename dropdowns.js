@@ -129,7 +129,7 @@ jQuery( document ) .ready( function( $ ) {
 				hideAllBoxen();
 				return false;
 			}
-//console.log( height );
+
 			var css = {
 				top : height
 			};
@@ -149,6 +149,7 @@ jQuery( document ) .ready( function( $ ) {
 			 * the dropdowns div, left-aligned with the link.
 			 */
 			box.css( css );
+			link.addClass( 'active' );
 
 			active = {};
 			active.box = box;
@@ -181,6 +182,11 @@ jQuery( document ) .ready( function( $ ) {
 		boxen.each( function( i, e ) {
 			$( e ).css( origin );
 		} );
+
+		if ( null !== active ) {
+			active.trigger.removeClass( 'active' );
+		}
+
 		active = null;
 	}
 } );

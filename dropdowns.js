@@ -13,8 +13,8 @@ jQuery( document ) .ready( function( $ ) {
 	var active  = null;
 	var height  = 0;
 	var origin  = {
-		top  : '-1599980px',
-		left : '-1599980px'
+		top  : -1599980,
+		left : -1599980
 	};
 
 	var container = $( document.createElement( 'div' ) ).attr( 'id', 'menu' );
@@ -27,13 +27,13 @@ jQuery( document ) .ready( function( $ ) {
 		widgets.remove();
 		parent.prepend( container );
 		container.append( dropdowns ).append( triggers );
-		height = triggers.outerHeight();
+		height = container.outerHeight() - parseInt( container.css( 'border-top-width' ) );
 	} );
 
 	titles.each( function ( i, title ) {
 		var title = $( title );
 
-		if ( '' === title.text().trim() ) {
+		if ( '' === $.trim( title.text() ) ) {
 			return;
 		}
 
@@ -47,6 +47,10 @@ jQuery( document ) .ready( function( $ ) {
 
 		$( document.createElement( 'li' ) ).html( link ).appendTo( triggers );
 
+		title.parent().find( 'a' ).each( function( i, e ) {
+			$( e ).removeAttr( 'title' );
+		} );
+
 		title.parent()
 			.attr( 'id', boxId )
 			.appendTo( dropdowns )
@@ -59,7 +63,7 @@ jQuery( document ) .ready( function( $ ) {
 	} );
 
 	$( window ).bind( 'resize', function ( e ) {
-		height = triggers.outerHeight();
+		height = container.outerHeight() - parseInt( container.css( 'border-top-width' ) );
 
 		if ( null === active ) {
 			return;
@@ -105,10 +109,7 @@ jQuery( document ) .ready( function( $ ) {
 
 		if ( link.hasClass( 'trigger' ) ) {
 			var box = $( '#' + link.attr( 'data-for' ) );
-			var boxPosition = {
-				top  : box.css( 'top' ),
-				left : box.css( 'left' )
-			};
+			var boxPosition = box.position();
 			var linkPosition = link.position();
 
 			/*
@@ -151,9 +152,10 @@ jQuery( document ) .ready( function( $ ) {
 			box.css( css );
 			link.addClass( 'active' );
 
-			active = {};
-			active.box = box;
-			active.trigger = link;
+			active = {
+				box     : box,
+				trigger : link
+			};
 
 			return false;
 		}

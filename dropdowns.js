@@ -153,6 +153,10 @@ jQuery( document ) .ready( function( $ ) {
 			box.css( css );
 			link.addClass( 'active' );
 
+			if ( box.hasClass( 'widget_search' ) ) {
+				box.find( '[name]=s' ).focus();
+			}
+
 			active = {
 				box     : box,
 				trigger : link

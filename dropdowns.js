@@ -1,9 +1,10 @@
 jQuery( document ) .ready( function( $ ) {
 
 	var config = {
-		container : '#dropdown-widgets',
-		dropdowns : '.dropdown',
-		triggers  : '.widget-title'
+		container   : '#dropdown-widgets',
+		dropdowns   : '.dropdown',
+		triggers    : '.widget-title',
+		maxBoxWidth : 765
 	};
 
 	var widgets = $( config.container );

@@ -1,8 +1,9 @@
 <?php
+
+
 /**
  * Register Custom Widget Area.
  */
-
 function poc_widget_dropdowns_widgets_init() {
 	register_sidebar( array(
 		'name'          => 'Dropdowns',
@@ -16,6 +17,10 @@ function poc_widget_dropdowns_widgets_init() {
 }
 add_action( 'widgets_init', 'poc_widget_dropdowns_widgets_init' );
 
+
+/**
+ * Javascript.
+ */
 function poc_widget_dropdowns_scripts() {
 	wp_enqueue_script(
 		'dropdown-widgets',
@@ -26,3 +31,9 @@ function poc_widget_dropdowns_scripts() {
 	);
 }
 add_action( 'wp_print_scripts', 'poc_widget_dropdowns_scripts' );
+
+
+/**
+ * Menu.
+ */
+register_nav_menu( 'primary', 'Primary' );

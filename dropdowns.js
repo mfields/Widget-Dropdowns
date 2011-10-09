@@ -4,7 +4,7 @@ jQuery( document ) .ready( function( $ ) {
 		container   : '#dropdown-widgets',
 		dropdowns   : '.dropdown',
 		triggers    : '.widget-title',
-		maxBoxWidth : 765
+		maxBoxWidth : 400
 	};
 
 	var widgets = $( config.container );
@@ -156,6 +156,7 @@ jQuery( document ) .ready( function( $ ) {
 			if ( box.hasClass( 'widget_search' ) ) {
 				box.find( '[name]=s' ).focus();
 			}
+
 
 			active = {
 				box     : box,

@@ -36,4 +36,4 @@ add_action( 'wp_print_scripts', 'poc_widget_dropdowns_scripts' );
 /**
  * Menu.
  */
-register_nav_menu( 'primary', 'Primary' );
+register_nav_menu( 'dropdowns', 'Dropdowns' );
